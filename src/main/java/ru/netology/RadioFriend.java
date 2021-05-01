@@ -1,5 +1,11 @@
 package ru.netology;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+
 class Radio {
     private int firstStation = 0;
     private int finalStation = 10;
@@ -12,9 +18,6 @@ class Radio {
         this.actualRadioStation = currentRadioStation;
         this.finalStation = finalStation;
     }
-    public Radio() {
-    }
-
     public int getCurrentRadioStation() {
         return actualRadioStation;
     }
