@@ -8,107 +8,107 @@ class RadioTest {
 
     @Test
     void shouldNextStationOverFinalStation() {
-        Radio friend = new Radio(140,140);
-        friend.nextRadioStation();
-        assertEquals(0, friend.getCurrentRadioStation());
+        Radio Radioman = new Radio(140,140);
+        Radioman.nextRadioStation();
+        assertEquals(0, Radioman.getActualRadioStation());
     }
     @Test
     void shouldNextStationIfFinalStation() {
-        Radio friend = new Radio(10,10);
-        friend.nextRadioStation();
-        assertEquals(0, friend.getCurrentRadioStation());
+        Radio Radioman = new Radio(10,10);
+        Radioman.nextRadioStation();
+        assertEquals(0, Radioman.getActualRadioStation());
     }
     @Test
     void shouldNextRadioStation() {
-        Radio friend = new Radio(5,10);
-        friend.nextRadioStation();
-        assertEquals(6, friend.getCurrentRadioStation());
+        Radio Radioman = new Radio(5,10);
+        Radioman.nextRadioStation();
+        assertEquals(6, Radioman.getActualRadioStation());
     }
     @Test
     void shouldNextStationOverMax() {
-        Radio friend = new Radio(141,140);
-        friend.nextRadioStation();
-        assertEquals(0, friend.getCurrentRadioStation());
+        Radio Radioman = new Radio(141,140);
+        Radioman.nextRadioStation();
+        assertEquals(0, Radioman.getActualRadioStation());
     }
     @Test
-    void shouldPrevStationIfCurrentStationMin() {
-        Radio friend = new Radio(0,10);
-        friend.prevRadioStation();
-        assertEquals(10, friend.getCurrentRadioStation());
-    }
-
-    @Test
-    void shouldPrevStationIfCurrentStationStart() {
-        Radio friend = new Radio(0,56);
-        friend.prevRadioStation();
-        assertEquals(56, friend.getCurrentRadioStation());
+    void shouldPrevStationIfActualStationMin() {
+        Radio Radioman = new Radio(0,10);
+        Radioman.prevRadioStation();
+        assertEquals(10, Radioman.getActualRadioStation());
     }
 
     @Test
-    void shouldPrevStationIfCurrentStationLessStart() {
-        Radio friend = new Radio(-1,56);
-        friend.prevRadioStation();
-        assertEquals(56, friend.getCurrentRadioStation());
+    void shouldPrevStationIfActualStationStart() {
+        Radio Radioman = new Radio(0,56);
+        Radioman.prevRadioStation();
+        assertEquals(56, Radioman.getActualRadioStation());
+    }
+
+    @Test
+    void shouldPrevStationIfActualStationLessStart() {
+        Radio Radioman = new Radio(-1,56);
+        Radioman.prevRadioStation();
+        assertEquals(56, Radioman.getActualRadioStation());
     }
 
     @Test
     void shouldPrevRadioStation() {
-        Radio friend = new Radio(3,10);
-        friend.prevRadioStation();
-        assertEquals(2, friend.getCurrentRadioStation());
+        Radio Radioman = new Radio(3,10);
+        Radioman.prevRadioStation();
+        assertEquals(2, Radioman.getActualRadioStation());
     }
 
     @Test
     void shouldControlNumButtonStation() {
-        Radio friend = new Radio(5,10);
-        assertEquals(5, friend.getCurrentRadioStation());
+        Radio Radioman = new Radio(5,10);
+        assertEquals(5, Radioman.getActualRadioStation());
     }
 
     @Test
     void shouldSoundVolumeUp() {
-        Radio friend = new Radio();
-        friend.setCurrentSoundVolume(9);
-        friend.shouldSoundVolumeUp();
-        assertEquals(10, friend.getCurrentSoundVolume());
+        Radio Radioman = new Radio();
+        Radioman.setActualSoundVolume(9);
+        Radioman.shouldSoundVolumeUp();
+        assertEquals(10, Radioman.getActualSoundVolume());
     }
 
     @Test
     void shouldSoundVolumeDown() {
-        Radio friend = new Radio();
-        friend.setCurrentSoundVolume(7);
-        friend.shouldSoundVolumeDown();
-        assertEquals(6, friend.getCurrentSoundVolume());
+        Radio Radioman = new Radio();
+        Radioman.setActualSoundVolume(7);
+        Radioman.shouldSoundVolumeDown();
+        assertEquals(6, Radioman.getActualSoundVolume());
     }
 
     @Test
     void shouldSoundVolumeUpControl() {
-        Radio friend = new Radio();
-        friend.setCurrentSoundVolume(100);
-        friend.shouldSoundVolumeUp();
-        assertEquals(100, friend.getCurrentSoundVolume());
+        Radio Radioman = new Radio();
+        Radioman.setActualSoundVolume(100);
+        Radioman.shouldSoundVolumeUp();
+        assertEquals(100, Radioman.getActualSoundVolume());
     }
 
     @Test
     void shouldSoundVolumeUpControlOverMax() {
-        Radio friend = new Radio();
-        friend.setCurrentSoundVolume(101);
-        friend.shouldSoundVolumeUp();
-        assertEquals(100, friend.getCurrentSoundVolume());
+        Radio Radioman = new Radio();
+        Radioman.setActualSoundVolume(101);
+        Radioman.shouldSoundVolumeUp();
+        assertEquals(100, Radioman.getActualSoundVolume());
     }
 
     @Test
     void shouldSoundVolumeDownControl() {
-        Radio friend = new Radio();
-        friend.setCurrentSoundVolume(0);
-        friend.shouldSoundVolumeDown();
-        assertEquals(0, friend.getCurrentSoundVolume());
+        Radio Radioman = new Radio();
+        Radioman.setActualSoundVolume(0);
+        Radioman.shouldSoundVolumeDown();
+        assertEquals(0, Radioman.getActualSoundVolume());
     }
 
     @Test
     void shouldSoundVolumeDownControlLessMin() {
-        Radio friend = new Radio();
-        friend.setCurrentSoundVolume(-1);
-        friend.shouldSoundVolumeDown();
-        assertEquals(0, friend.getCurrentSoundVolume());
+        Radio Radioman = new Radio();
+        Radioman.setActualSoundVolume(-1);
+        Radioman.shouldSoundVolumeDown();
+        assertEquals(0, Radioman.getActualSoundVolume());
     }
 }
